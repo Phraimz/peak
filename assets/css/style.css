@@ -1,38 +1,60 @@
+/* =====================================
+   PHRAIMZ CONCEPTS
+   COMPLETE LANDING PAGE STYLE
+===================================== */
+
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html{
+    scroll-behavior:smooth;
 }
 
 
 body{
 
-font-family:
-"Helvetica Neue",
-Arial,
-sans-serif;
+    background:#0b0b0b;
+    color:white;
 
-background:#111;
-color:white;
+    font-family:
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+    overflow-x:hidden;
 
 }
 
 
 
+/* =====================================
+   HEADER / NAVIGATION
+===================================== */
+
+
 header{
 
-position:absolute;
-top:0;
-left:0;
-width:100%;
+    position:absolute;
 
-display:flex;
-justify-content:space-between;
-align-items:center;
+    top:0;
+    left:0;
 
-padding:40px 60px;
+    width:100%;
 
-z-index:10;
+    padding:45px 70px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    z-index:20;
 
 }
 
@@ -40,8 +62,23 @@ z-index:10;
 
 .logo{
 
-letter-spacing:5px;
-font-size:20px;
+    font-size:22px;
+
+    line-height:1.1;
+
+    letter-spacing:5px;
+
+    font-weight:400;
+
+}
+
+
+
+nav{
+
+    display:flex;
+
+    gap:40px;
 
 }
 
@@ -49,90 +86,272 @@ font-size:20px;
 
 nav a{
 
-color:white;
-text-decoration:none;
-margin-left:35px;
+    color:white;
 
-font-size:15px;
+    text-decoration:none;
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    opacity:.85;
+
+    transition:.3s;
 
 }
 
+
+
+nav a:hover{
+
+    opacity:1;
+
+}
+
+
+
+/* =====================================
+   HERO SECTION
+===================================== */
 
 
 .hero{
 
-height:100vh;
 
-background:
+    height:100vh;
 
-linear-gradient(
-rgba(0,0,0,.45),
-rgba(0,0,0,.75)
-),
-
-url("../images/hero.jpg");
+    min-height:700px;
 
 
-background-size:cover;
-background-position:center;
+    position:relative;
 
 
-display:flex;
-align-items:center;
+    display:flex;
 
-padding:60px;
+    align-items:center;
+
+
+    padding:70px;
+
+
+
+    background-image:
+
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.88),
+        rgba(0,0,0,.45)
+    ),
+
+    url("../images/hero.jpg");
+
+
+
+    background-size:cover;
+
+    background-position:center;
+
+
 
 }
+
+
+
+
+.hero::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+    radial-gradient(
+
+        circle at 70% 50%,
+
+        transparent 10%,
+
+        rgba(0,0,0,.55)
+
+    );
+
+
+}
+
+
 
 
 
 .hero-content{
 
-max-width:900px;
+
+    position:relative;
+
+
+    z-index:2;
+
+
+    max-width:950px;
+
+
+    animation:appear 1.5s ease;
+
 
 }
+
+
+
+@keyframes appear{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+
+}
+
+
+
+
+
+.subtitle{
+
+
+    font-size:13px;
+
+    letter-spacing:5px;
+
+    color:#d0d0d0;
+
+    margin-bottom:35px;
+
+
+}
+
+
 
 
 
 .hero h1{
 
-font-size:clamp(45px,7vw,95px);
 
-font-weight:300;
+    font-size:
 
-line-height:1.05;
+    clamp(60px,8vw,120px);
+
+
+    line-height:.92;
+
+
+    font-weight:300;
+
+
+    letter-spacing:-3px;
+
+
+    text-shadow:
+
+    0 10px 40px rgba(0,0,0,.8);
+
 
 }
 
 
 
-.hero p{
 
-margin-top:30px;
+.description{
 
-font-size:22px;
 
-color:#ddd;
+    margin-top:35px;
+
+
+    max-width:560px;
+
+
+    font-size:21px;
+
+
+    line-height:1.6;
+
+
+    color:#e2e2e2;
+
 
 }
+
+
 
 
 
 .button{
 
-display:inline-block;
 
-margin-top:45px;
+    display:inline-block;
 
-padding:16px 40px;
 
-border:1px solid white;
+    margin-top:45px;
 
-color:white;
 
-text-decoration:none;
+    padding:17px 45px;
 
-transition:.3s;
+
+    border:
+
+    1px solid rgba(255,255,255,.8);
+
+
+
+    color:white;
+
+
+    text-decoration:none;
+
+
+    letter-spacing:3px;
+
+
+    text-transform:uppercase;
+
+
+    font-size:13px;
+
+
+
+    background:
+
+    rgba(255,255,255,.05);
+
+
+
+    backdrop-filter:blur(8px);
+
+
+
+    transition:.4s;
+
 
 }
 
@@ -140,18 +359,43 @@ transition:.3s;
 
 .button:hover{
 
-background:white;
-color:black;
+
+    background:white;
+
+
+    color:black;
+
+
+    transform:translateY(-5px);
+
 
 }
 
 
 
+/* =====================================
+   INTRODUCTION
+===================================== */
+
+
 .intro{
 
-padding:120px 60px;
 
-background:#151515;
+    padding:150px 70px;
+
+
+    background:#121212;
+
+
+}
+
+
+
+.intro-text{
+
+
+    max-width:900px;
+
 
 }
 
@@ -159,9 +403,17 @@ background:#151515;
 
 .intro h2{
 
-font-size:45px;
 
-font-weight:300;
+    font-size:
+
+    clamp(40px,5vw,65px);
+
+
+    font-weight:300;
+
+
+    line-height:1.1;
+
 
 }
 
@@ -169,15 +421,312 @@ font-weight:300;
 
 .intro p{
 
-margin-top:25px;
 
-max-width:700px;
+    margin-top:40px;
 
-line-height:1.8;
 
-color:#ccc;
+    max-width:750px;
 
-font-size:18px;
+
+    font-size:22px;
+
+
+    line-height:1.8;
+
+
+    color:#cfcfcf;
+
+
+}
+
+
+
+/* =====================================
+   SERVICES
+===================================== */
+
+
+.services{
+
+
+    padding:130px 70px;
+
+
+    background:#0b0b0b;
+
+
+}
+
+
+
+.services h2{
+
+
+    font-size:55px;
+
+    font-weight:300;
+
+
+}
+
+
+
+
+.service-list{
+
+
+    margin-top:70px;
+
+
+}
+
+
+
+.service-list div{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:50px;
+
+
+    padding:35px 0;
+
+
+    border-bottom:1px solid #292929;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.service-list div:hover{
+
+
+    padding-left:20px;
+
+
+}
+
+
+
+.service-list span{
+
+
+    color:#777;
+
+
+    font-size:18px;
+
+
+}
+
+
+
+
+.service-list h3{
+
+
+    font-size:38px;
+
+
+    font-weight:300;
+
+
+}
+
+
+
+/* =====================================
+   PROJECT CALL TO ACTION
+===================================== */
+
+
+.project-call{
+
+
+    padding:170px 40px;
+
+
+    text-align:center;
+
+
+    background:
+
+
+    linear-gradient(
+
+        rgba(0,0,0,.7),
+
+        rgba(0,0,0,.8)
+
+    ),
+
+    url("../images/project-bg.jpg");
+
+
+
+    background-size:cover;
+
+    background-position:center;
+
+
+}
+
+
+
+
+.project-call h2{
+
+
+    font-size:
+
+    clamp(40px,5vw,70px);
+
+
+    font-weight:300;
+
+
+}
+
+
+
+.project-call p{
+
+
+    margin-top:30px;
+
+
+    color:#ddd;
+
+
+    font-size:21px;
+
+
+}
+
+
+
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+
+footer{
+
+
+    padding:60px 70px;
+
+
+    background:#050505;
+
+
+    color:#777;
+
+
+    letter-spacing:2px;
+
+
+}
+
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+
+@media(max-width:800px){
+
+
+
+header{
+
+
+    padding:30px;
+
+
+}
+
+
+
+nav{
+
+
+    display:none;
+
+
+}
+
+
+
+
+.hero{
+
+
+    padding:35px;
+
+
+}
+
+
+
+.hero h1{
+
+
+    font-size:55px;
+
+
+}
+
+
+
+.description{
+
+
+    font-size:18px;
+
+
+}
+
+
+
+.intro,
+
+.services{
+
+
+    padding:90px 30px;
+
+
+}
+
+
+
+.service-list h3{
+
+
+    font-size:25px;
+
+
+}
+
+
+
+.project-call{
+
+
+    padding:100px 30px;
+
 
 }
 
@@ -185,10 +734,12 @@ font-size:18px;
 
 footer{
 
-padding:40px 60px;
 
-background:#000;
+    padding:40px 30px;
 
-color:#777;
+
+}
+
+
 
 }
