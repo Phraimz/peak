@@ -1,10 +1,8 @@
 /* ==================================================
    PHRAIMZ CONCEPTS
-   IMMERSIVE ARCHITECTURAL EXPERIENCE WEBSITE
+   IMMERSIVE ARCHITECTURAL LANDING PAGE
 ================================================== */
 
-
-/* RESET */
 
 *{
     margin:0;
@@ -22,7 +20,7 @@ body{
 
     background:#070808;
 
-    color:white;
+    color:#fff;
 
     font-family:
     "Helvetica Neue",
@@ -32,6 +30,7 @@ body{
     overflow-x:hidden;
 
 }
+
 
 
 
@@ -58,7 +57,7 @@ header{
 
     align-items:center;
 
-    z-index:20;
+    z-index:50;
 
 }
 
@@ -68,9 +67,9 @@ header{
 
     font-size:22px;
 
-    font-weight:300;
-
     letter-spacing:5px;
+
+    font-weight:300;
 
     line-height:1.1;
 
@@ -94,9 +93,9 @@ nav a{
 
     text-decoration:none;
 
-    font-size:12px;
-
     text-transform:uppercase;
+
+    font-size:12px;
 
     letter-spacing:3px;
 
@@ -107,18 +106,19 @@ nav a{
 }
 
 
+
 nav a:hover{
 
     color:#c9a35b;
-
-    opacity:1;
 
 }
 
 
 
+
+
 /* ==================================================
-   LANDING HERO WITH PANORAMA
+   HERO
 ================================================== */
 
 
@@ -127,7 +127,8 @@ nav a:hover{
 
     height:100vh;
 
-    min-height:750px;
+
+    min-height:800px;
 
 
     position:relative;
@@ -143,9 +144,6 @@ nav a:hover{
 
 
     overflow:hidden;
-
-
-    perspective:1200px;
 
 
 }
@@ -176,7 +174,7 @@ nav a:hover{
 
     animation:
 
-    cameraDrift 35s infinite alternate ease-in-out;
+    cameraMove 35s infinite alternate ease-in-out;
 
 
 }
@@ -185,7 +183,7 @@ nav a:hover{
 
 
 
-@keyframes cameraDrift{
+@keyframes cameraMove{
 
 
 0%{
@@ -199,24 +197,11 @@ translateX(-15px);
 }
 
 
-
-50%{
-
-transform:
-
-scale(1.13)
-
-translateX(10px);
-
-}
-
-
-
 100%{
 
 transform:
 
-scale(1.08)
+scale(1.15)
 
 translateX(15px);
 
@@ -224,6 +209,7 @@ translateX(15px);
 
 
 }
+
 
 
 
@@ -257,7 +243,7 @@ translateX(15px);
 
     circle,
 
-    transparent 20%,
+    transparent,
 
     rgba(0,0,0,.75)
 
@@ -270,11 +256,6 @@ translateX(15px);
 
 
 
-/* ==================================================
-   HERO CONTENT
-================================================== */
-
-
 .hero-content{
 
 
@@ -284,66 +265,10 @@ translateX(15px);
     z-index:3;
 
 
-    max-width:900px;
-
-
-    padding:45px;
-
-
-    background:
-
-    rgba(0,0,0,.22);
-
-
-    backdrop-filter:
-
-    blur(8px);
-
-
-    border:
-
-    1px solid rgba(255,255,255,.12);
-
-
-    animation:
-
-    contentReveal 1.5s ease;
+    max-width:950px;
 
 
 }
-
-
-
-
-
-@keyframes contentReveal{
-
-
-from{
-
-opacity:0;
-
-transform:
-
-translateY(50px);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:
-
-translateY(0);
-
-}
-
-
-}
-
-
 
 
 
@@ -366,7 +291,7 @@ translateY(0);
 .hero h1{
 
 
-    margin-top:30px;
+    margin-top:35px;
 
 
     display:flex;
@@ -377,16 +302,16 @@ translateY(0);
 
     font-size:
 
-    clamp(55px,8vw,120px);
+    clamp(60px,9vw,130px);
+
+
+    line-height:.88;
 
 
     font-weight:200;
 
 
-    line-height:.9;
-
-
-    letter-spacing:-4px;
+    letter-spacing:-5px;
 
 
 }
@@ -401,28 +326,30 @@ translateY(0);
 
     animation:
 
-    textReveal 1s forwards;
+    reveal 1s forwards;
 
 
 }
 
 
+
 .hero h1 span:nth-child(2){
 
-animation-delay:.25s;
+animation-delay:.3s;
 
 }
 
 
 .hero h1 span:nth-child(3){
 
-animation-delay:.5s;
+animation-delay:.6s;
 
 }
 
 
 
-@keyframes textReveal{
+
+@keyframes reveal{
 
 
 from{
@@ -452,22 +379,23 @@ translateY(0);
 
 
 
+
 .description{
 
 
-    margin-top:35px;
+    margin-top:40px;
 
 
     max-width:520px;
-
-
-    color:#ddd;
 
 
     font-size:20px;
 
 
     line-height:1.7;
+
+
+    color:#ddd;
 
 
 }
@@ -488,15 +416,13 @@ translateY(0);
     padding:18px 45px;
 
 
+    border:1px solid rgba(255,255,255,.8);
+
+
     color:white;
 
 
     text-decoration:none;
-
-
-    border:
-
-    1px solid white;
 
 
     letter-spacing:3px;
@@ -505,15 +431,15 @@ translateY(0);
     font-size:12px;
 
 
-    transition:.4s;
-
-
     background:
 
     rgba(255,255,255,.08);
 
 
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
+
+
+    transition:.4s;
 
 
 }
@@ -539,133 +465,45 @@ translateY(0);
 
 
 
-/* ==================================================
-   FLOATING HERO ELEMENTS
-================================================== */
-
-
-.floating-element{
-
-
-position:absolute;
-
-z-index:4;
-
-
-padding:18px 28px;
-
-
-background:
-
-rgba(255,255,255,.08);
-
-
-border:
-
-1px solid rgba(255,255,255,.25);
-
-
-backdrop-filter:
-
-blur(20px);
-
-
-font-size:11px;
-
-
-letter-spacing:3px;
-
-
-}
-
-
-
-.element-one{
-
-
-right:10%;
-
-top:35%;
-
-
-animation:
-
-float 6s infinite ease-in-out;
-
-
-}
-
-
-
-.element-two{
-
-
-right:15%;
-
-bottom:25%;
-
-
-animation:
-
-float 7s infinite ease-in-out reverse;
-
-
-}
-
-
-
-@keyframes float{
-
-
-50%{
-
-transform:
-
-translateY(-25px);
-
-}
-
-}
-
-
-
-
 
 .tour-indicator{
 
 
-position:absolute;
-
-right:70px;
-
-top:50%;
-
-transform:translateY(-50%);
+    position:absolute;
 
 
-z-index:5;
+    right:70px;
 
 
-padding:18px 25px;
+    top:50%;
 
 
-background:
-
-rgba(0,0,0,.25);
+    transform:translateY(-50%);
 
 
-border:
-
-1px solid rgba(255,255,255,.3);
+    z-index:5;
 
 
-backdrop-filter:blur(15px);
+    padding:20px 30px;
 
 
-font-size:12px;
+    border:
+
+    1px solid rgba(255,255,255,.25);
 
 
-letter-spacing:3px;
+    background:
+
+    rgba(0,0,0,.25);
+
+
+    backdrop-filter:blur(15px);
+
+
+    letter-spacing:3px;
+
+
+    font-size:12px;
 
 
 }
@@ -675,132 +513,209 @@ letter-spacing:3px;
 .tour-indicator span{
 
 
-display:inline-block;
-
-width:8px;
-
-height:8px;
-
-border-radius:50%;
+    display:inline-block;
 
 
-background:#c9a35b;
+    width:8px;
 
 
-margin-right:15px;
+    height:8px;
 
 
-animation:pulse 2s infinite;
+    border-radius:50%;
+
+
+    background:#c9a35b;
+
+
+    margin-right:15px;
 
 
 }
 
 
-
-@keyframes pulse{
-
-
-50%{
-
-opacity:.3;
-
-transform:scale(1.5);
-
-}
-
-}
 
 
 
 
 /* ==================================================
-   PROJECT GALLERY
+   GENERAL SECTION STYLE
 ================================================== */
 
 
-.projects-hero{
+section:not(.hero){
+
+    padding:120px 70px;
+
+}
 
 
-min-height:65vh;
 
-display:flex;
+.section-title p{
 
-align-items:center;
 
-padding:150px 70px 80px;
+    color:#c9a35b;
+
+
+    letter-spacing:5px;
+
+
+    font-size:12px;
+
+
+}
+
+
+
+.section-title h2{
+
+
+    margin-top:25px;
+
+
+    font-size:
+
+    clamp(45px,6vw,75px);
+
+
+    font-weight:200;
+
+
+    line-height:1;
+
+
+    letter-spacing:-2px;
+
+
+}
+
+
+
+
+
+
+
+/* ==================================================
+   EXPERIENCE SECTION
+================================================== */
+
+
+.experience{
+
+
+background:#090a0a;
+
+
+}
+
+
+
+
+.experience-grid{
+
+
+margin-top:80px;
+
+
+display:grid;
+
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+
+gap:30px;
+
+
+}
+
+
+
+
+.experience-card{
+
+
+padding:45px;
+
+
+min-height:300px;
 
 
 background:
 
-linear-gradient(
-
-90deg,
-
-rgba(0,0,0,.85),
-
-rgba(0,0,0,.35)
-
-),
-
-url("../images/project-bg.jpg");
+rgba(255,255,255,.05);
 
 
-background-size:cover;
+border:
 
-background-position:center;
+1px solid rgba(255,255,255,.12);
+
+
+backdrop-filter:
+
+blur(20px);
+
+
+transition:.5s;
 
 
 }
 
 
 
-.small-title{
+.experience-card:hover{
+
+
+transform:
+
+translateY(-20px);
+
+
+border-color:#c9a35b;
+
+
+}
+
+
+
+.experience-card span{
 
 
 color:#c9a35b;
 
-letter-spacing:5px;
 
-font-size:12px;
-
-
-}
-
-
-
-.projects-hero h1{
-
-
-margin-top:25px;
-
-font-size:
-
-clamp(55px,7vw,90px);
-
-
-font-weight:200;
-
-
-line-height:.9;
+letter-spacing:3px;
 
 
 }
 
 
 
+.experience-card h3{
 
 
-.intro-text{
+margin-top:50px;
 
 
-margin-top:30px;
-
-max-width:520px;
+font-size:30px;
 
 
-font-size:20px;
+font-weight:300;
 
-color:#ccc;
+
+}
+
+
+
+.experience-card p{
+
+
+margin-top:20px;
+
+
+color:#aaa;
+
 
 line-height:1.7;
 
@@ -811,25 +726,25 @@ line-height:1.7;
 
 
 
-.projects-container{
+/* ==================================================
+   FEATURED PROJECT
+================================================== */
 
 
-padding:
+.featured{
 
-80px 70px 130px;
+
+background:#070808;
 
 
 }
 
 
 
-.project-grid{
+.featured-project{
 
 
-max-width:1250px;
-
-
-margin:auto;
+margin-top:80px;
 
 
 display:grid;
@@ -837,171 +752,220 @@ display:grid;
 
 grid-template-columns:
 
-repeat(2,1fr);
+1.4fr 1fr;
 
 
-gap:45px;
+gap:70px;
 
 
-perspective:1200px;
-
-
-}
-
-
-
-.project-card{
-
-
-height:380px;
-
-
-position:relative;
-
-
-overflow:hidden;
-
-
-border-radius:10px;
-
-
-transform-style:preserve-3d;
-
-
-transition:.5s;
+align-items:center;
 
 
 }
 
 
 
-.project-card:hover{
 
-
-transform:
-
-translateY(-20px)
-
-rotateX(6deg)
-
-rotateY(-4deg);
-
-
-}
-
-
-
-.image-wrapper{
-
-
-position:absolute;
-
-inset:0;
-
-}
-
-
-
-.image-wrapper img{
+.featured-project img{
 
 
 width:100%;
 
-height:100%;
+
+height:550px;
+
 
 object-fit:cover;
 
-transition:.8s;
+
+}
+
+
+
+.featured-project span{
+
+
+color:#c9a35b;
+
+
+letter-spacing:4px;
 
 
 }
 
 
 
-.project-card:hover img{
+.featured-project h3{
 
 
-transform:scale(1.1);
+margin-top:25px;
+
+
+font-size:55px;
+
+
+font-weight:200;
 
 
 }
 
 
 
-.project-info{
+.featured-project p{
 
 
-position:absolute;
+margin-top:25px;
 
 
-inset:0;
+color:#ccc;
 
 
-padding:35px;
+font-size:18px;
+
+
+line-height:1.7;
+
+
+}
+
+
+
+
+.featured-project a{
+
+
+display:inline-block;
+
+
+margin-top:35px;
+
+
+color:white;
+
+
+text-decoration:none;
+
+
+letter-spacing:3px;
+
+
+}
+
+
+
+
+
+/* ==================================================
+   PHILOSOPHY
+================================================== */
+
+
+.philosophy{
+
+
+height:70vh;
 
 
 display:flex;
 
 
-flex-direction:column;
+align-items:center;
 
 
-justify-content:flex-end;
+justify-content:center;
+
+
+text-align:center;
 
 
 background:
 
+
 linear-gradient(
 
-transparent,
+rgba(0,0,0,.7),
 
-rgba(0,0,0,.85)
+rgba(0,0,0,.8)
 
-);
+),
 
-
-}
-
+url("../images/project-bg.jpg");
 
 
-.project-info span{
-
-
-color:#c9a35b;
-
-letter-spacing:4px;
-
-font-size:11px;
+background-size:cover;
 
 
 }
 
 
 
-.project-info h2{
+.philosophy h2{
 
 
-margin-top:12px;
+font-size:
 
-font-size:32px;
+clamp(45px,6vw,90px);
 
-font-weight:300;
+
+font-weight:200;
+
+
+line-height:1.1;
 
 
 }
 
 
 
-.project-info a{
 
 
-margin-top:20px;
 
-color:white;
 
-text-decoration:none;
+/* ==================================================
+   CONTACT
+================================================== */
+
+
+.contact{
+
+
+text-align:center;
+
+
+}
+
+
+
+.contact h2{
+
+
+font-size:
+
+clamp(40px,5vw,70px);
+
+
+font-weight:200;
+
+
+}
+
+
+
+
+footer{
+
+
+padding:50px 70px;
+
+
+background:#030404;
+
+
+color:#777;
+
 
 letter-spacing:3px;
+
 
 font-size:12px;
 
@@ -1027,6 +991,7 @@ padding:30px;
 }
 
 
+
 nav{
 
 display:none;
@@ -1043,17 +1008,7 @@ padding:30px;
 
 
 
-.hero-content{
-
-padding:30px;
-
-}
-
-
-
-.tour-indicator,
-
-.floating-element{
+.tour-indicator{
 
 display:none;
 
@@ -1061,19 +1016,38 @@ display:none;
 
 
 
-.projects-container{
+section:not(.hero){
 
-padding:50px 25px;
+padding:80px 30px;
 
 }
 
 
 
-.project-grid{
+.experience-grid,
+
+.featured-project{
 
 grid-template-columns:1fr;
 
 }
+
+
+
+.featured-project img{
+
+height:350px;
+
+}
+
+
+
+.featured-project h3{
+
+font-size:38px;
+
+}
+
 
 
 }
