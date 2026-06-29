@@ -1,6 +1,6 @@
 /* =========================================
    PHRAIMZ CONCEPTS
-   IMMERSIVE 360 LANDING PAGE
+   PROJECT GALLERY STYLE
 ========================================= */
 
 
@@ -18,7 +18,8 @@ html{
 
 body{
 
-    background:#080808;
+    background:#070808;
+
     color:white;
 
     font-family:
@@ -32,8 +33,9 @@ body{
 
 
 
+
 /* =========================================
-   NAVIGATION
+   HEADER
 ========================================= */
 
 
@@ -62,7 +64,7 @@ header{
 
 .logo{
 
-    font-size:22px;
+    font-size:21px;
 
     line-height:1.1;
 
@@ -74,12 +76,11 @@ header{
 
 
 
-
 nav{
 
     display:flex;
 
-    gap:45px;
+    gap:40px;
 
 }
 
@@ -91,13 +92,13 @@ nav a{
 
     text-decoration:none;
 
-    text-transform:uppercase;
-
     font-size:13px;
 
     letter-spacing:2px;
 
-    opacity:.85;
+    text-transform:uppercase;
+
+    opacity:.8;
 
     transition:.3s;
 
@@ -107,28 +108,25 @@ nav a{
 
 nav a:hover{
 
-    opacity:1;
+    color:#c9a35b;
 
-    color:#d5a447;
+    opacity:1;
 
 }
 
 
 
+
+
 /* =========================================
-   HERO CONTAINER
+   PROJECT PAGE INTRO
 ========================================= */
 
 
-.hero{
+.projects-hero{
 
 
-    height:100vh;
-
-    min-height:750px;
-
-
-    position:relative;
+    min-height:65vh;
 
 
     display:flex;
@@ -137,103 +135,8 @@ nav a:hover{
     align-items:center;
 
 
-    padding:70px;
+    padding:150px 70px 80px;
 
-
-    overflow:hidden;
-
-
-    perspective:1200px;
-
-
-}
-
-
-
-
-
-/* =========================================
-   PANORAMA BACKGROUND
-========================================= */
-
-
-.panorama-layer{
-
-
-    position:absolute;
-
-
-    inset:-10%;
-
-
-    background-image:
-
-    url("../images/hero-panorama.jpg");
-
-
-    background-size:cover;
-
-
-    background-position:center;
-
-
-    transform:scale(1.15);
-
-
-    animation:
-
-    panoramaMove 30s infinite alternate ease-in-out;
-
-
-}
-
-
-
-
-
-@keyframes panoramaMove{
-
-
-    0%{
-
-        transform:
-
-        scale(1.15)
-
-        translateX(-20px);
-
-    }
-
-
-    100%{
-
-        transform:
-
-        scale(1.25)
-
-        translateX(20px);
-
-    }
-
-
-}
-
-
-
-
-
-/* =========================================
-   CINEMATIC OVERLAY
-========================================= */
-
-
-.hero-overlay{
-
-
-    position:absolute;
-
-
-    inset:0;
 
 
     background:
@@ -250,13 +153,276 @@ nav a:hover{
     ),
 
 
-    radial-gradient(
+    url("../images/project-bg.jpg");
 
-        circle,
 
-        transparent 20%,
 
-        rgba(0,0,0,.7)
+    background-size:cover;
+
+
+    background-position:center;
+
+
+}
+
+
+
+
+
+.small-title{
+
+
+    color:#c9a35b;
+
+    font-size:12px;
+
+    letter-spacing:5px;
+
+}
+
+
+
+
+
+.projects-hero h1{
+
+
+    margin-top:25px;
+
+
+    font-size:
+
+    clamp(55px,7vw,90px);
+
+
+    font-weight:200;
+
+
+    line-height:.9;
+
+
+    letter-spacing:-3px;
+
+
+}
+
+
+
+
+
+.intro-text{
+
+
+    margin-top:30px;
+
+
+    max-width:520px;
+
+
+    color:#ccc;
+
+
+    font-size:20px;
+
+
+    line-height:1.7;
+
+
+}
+
+
+
+
+
+/* =========================================
+   PROJECT GALLERY
+========================================= */
+
+
+.projects-container{
+
+
+    padding:
+
+    80px 70px 130px;
+
+
+    background:#070808;
+
+
+}
+
+
+
+
+.project-grid{
+
+
+    max-width:1250px;
+
+
+    margin:auto;
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(2,1fr);
+
+
+    gap:45px;
+
+
+    perspective:1200px;
+
+
+}
+
+
+
+
+
+
+/* =========================================
+   PROJECT CARD
+========================================= */
+
+
+.project-card{
+
+
+    height:380px;
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+    border-radius:8px;
+
+
+    background:#111;
+
+
+    transform-style:preserve-3d;
+
+
+    transition:.5s ease;
+
+
+}
+
+
+
+
+
+.project-card:hover{
+
+
+    transform:
+
+
+    translateY(-18px)
+
+
+    rotateX(6deg)
+
+
+    rotateY(-4deg);
+
+
+
+    box-shadow:
+
+
+    0 45px 90px rgba(0,0,0,.7);
+
+
+}
+
+
+
+
+
+/* IMAGE */
+
+
+.image-wrapper{
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+}
+
+
+
+
+.image-wrapper img{
+
+
+    width:100%;
+
+
+    height:100%;
+
+
+    object-fit:cover;
+
+
+    transition:
+
+    transform 1s ease;
+
+
+}
+
+
+
+.project-card:hover img{
+
+
+    transform:
+
+    scale(1.1);
+
+
+}
+
+
+
+
+
+/* DARK IMAGE FADE */
+
+
+.image-wrapper::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+
+    linear-gradient(
+
+        transparent,
+
+        rgba(0,0,0,.85)
 
     );
 
@@ -267,49 +433,20 @@ nav a:hover{
 
 
 
-/* =========================================
-   HERO CONTENT
-========================================= */
+
+/* PROJECT TEXT */
 
 
-.hero-content{
+.project-info{
 
 
-    position:relative;
+    position:absolute;
 
 
-    z-index:3;
+    inset:0;
 
 
-    max-width:1000px;
-
-
-}
-
-
-
-
-.brand{
-
-
-    font-size:14px;
-
-
-    letter-spacing:7px;
-
-
-    color:#d5a447;
-
-
-    margin-bottom:35px;
-
-
-}
-
-
-
-
-.hero h1{
+    padding:35px;
 
 
     display:flex;
@@ -318,80 +455,15 @@ nav a:hover{
     flex-direction:column;
 
 
-    font-size:
-
-    clamp(60px,9vw,130px);
+    justify-content:flex-end;
 
 
-    line-height:.86;
+    z-index:2;
 
-
-    font-weight:200;
-
-
-    letter-spacing:-4px;
-
-
-}
-
-
-
-
-.hero h1 span{
-
-
-    opacity:0;
-
-
-    animation:
-
-    revealText 1.2s forwards;
-
-
-}
-
-
-
-.hero h1 span:nth-child(2){
-
-    animation-delay:.25s;
-
-}
-
-
-
-.hero h1 span:nth-child(3){
-
-    animation-delay:.5s;
-
-}
-
-
-
-
-@keyframes revealText{
-
-
-from{
-
-    opacity:0;
 
     transform:
 
-    translateY(60px);
-
-}
-
-
-to{
-
-    opacity:1;
-
-    transform:
-
-    translateY(0);
-
-}
+    translateZ(35px);
 
 
 }
@@ -399,19 +471,51 @@ to{
 
 
 
-.description{
+.project-info span{
 
 
-    margin-top:35px;
+    font-size:11px;
 
 
-    max-width:550px;
+    letter-spacing:4px;
 
 
-    font-size:21px;
+    color:#c9a35b;
 
 
-    line-height:1.7;
+}
+
+
+
+
+.project-info h2{
+
+
+    margin-top:12px;
+
+
+    font-size:32px;
+
+
+    font-weight:300;
+
+
+}
+
+
+
+
+
+.project-info p{
+
+
+    margin-top:12px;
+
+
+    font-size:15px;
+
+
+    line-height:1.5;
 
 
     color:#ddd;
@@ -421,26 +525,12 @@ to{
 
 
 
-/* =========================================
-   BUTTON
-========================================= */
 
 
-.button{
+.project-info a{
 
 
-    display:inline-block;
-
-
-    margin-top:45px;
-
-
-    padding:18px 45px;
-
-
-    border:
-
-    1px solid rgba(255,255,255,.7);
+    margin-top:22px;
 
 
     color:white;
@@ -449,124 +539,13 @@ to{
     text-decoration:none;
 
 
-    letter-spacing:3px;
-
-
-    text-transform:uppercase;
-
-
-    font-size:13px;
-
-
-    background:
-
-    rgba(255,255,255,.08);
-
-
-    backdrop-filter:blur(12px);
-
-
-    transition:.4s;
-
-
-}
-
-
-
-
-.button:hover{
-
-
-    background:white;
-
-
-    color:black;
-
-
-    transform:
-
-    translateY(-8px)
-
-    scale(1.05);
-
-
-}
-
-
-
-
-/* =========================================
-   FLOATING INFORMATION ELEMENTS
-========================================= */
-
-
-.floating-element{
-
-
-    position:absolute;
-
-
-    z-index:3;
-
-
-    padding:18px 30px;
-
-
-    background:
-
-    rgba(255,255,255,.08);
-
-
-    border:
-
-    1px solid rgba(255,255,255,.25);
-
-
-    backdrop-filter:
-
-    blur(20px);
-
-
     font-size:12px;
 
 
     letter-spacing:3px;
 
 
-}
-
-
-
-.element-one{
-
-
-    right:12%;
-
-
-    top:35%;
-
-
-    animation:
-
-    floating 6s infinite ease-in-out;
-
-
-}
-
-
-
-.element-two{
-
-
-    right:18%;
-
-
-    bottom:25%;
-
-
-    animation:
-
-    floating 7s infinite ease-in-out reverse;
+    transition:.3s;
 
 
 }
@@ -574,26 +553,15 @@ to{
 
 
 
-
-@keyframes floating{
-
-
-0%,100%{
-
-transform:
-
-translateY(0);
-
-}
+.project-info a:hover{
 
 
-50%{
+    color:#c9a35b;
 
-transform:
 
-translateY(-25px);
+    transform:
 
-}
+    translateX(10px);
 
 
 }
@@ -603,94 +571,30 @@ translateY(-25px);
 
 
 /* =========================================
-   SCROLL INDICATOR
+   FOOTER
 ========================================= */
 
 
-.scroll-indicator{
+footer{
 
 
-    position:absolute;
+    padding:50px 70px;
 
 
-    bottom:40px;
+    background:#030404;
 
 
-    left:50%;
+    color:#777;
 
 
-    transform:translateX(-50%);
+    letter-spacing:2px;
 
 
-    z-index:3;
-
-
-    font-size:11px;
-
-
-    letter-spacing:5px;
+    font-size:13px;
 
 
 }
 
-
-
-.scroll-indicator div{
-
-
-    width:1px;
-
-
-    height:60px;
-
-
-    background:white;
-
-
-    margin:15px auto;
-
-
-    animation:
-
-    scrollAnimation 2s infinite;
-
-
-}
-
-
-
-
-@keyframes scrollAnimation{
-
-
-0%{
-
-height:0;
-
-opacity:0;
-
-}
-
-
-50%{
-
-height:60px;
-
-opacity:1;
-
-}
-
-
-100%{
-
-height:0;
-
-opacity:0;
-
-}
-
-
-}
 
 
 
@@ -700,13 +604,14 @@ opacity:0;
 ========================================= */
 
 
-@media(max-width:800px){
-
+@media(max-width:900px){
 
 
 header{
 
+
     padding:30px;
+
 
 }
 
@@ -720,33 +625,57 @@ nav{
 
 
 
-.hero{
+.projects-hero{
 
-    padding:35px;
+
+    padding:
+
+    130px 30px 70px;
+
 
 }
 
 
 
-.hero h1{
+.projects-container{
 
-    font-size:55px;
+
+    padding:
+
+    50px 25px 90px;
+
 
 }
 
 
 
-.description{
+.project-grid{
 
-    font-size:18px;
+
+    grid-template-columns:
+
+    1fr;
+
 
 }
 
 
 
-.floating-element{
+.project-card{
 
-    display:none;
+
+    height:330px;
+
+
+}
+
+
+
+.project-info h2{
+
+
+    font-size:27px;
+
 
 }
 
