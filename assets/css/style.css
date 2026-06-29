@@ -1,189 +1,21 @@
 /* =====================================
-   PHRAIMZ CONCEPTS
-   3D ARCHITECTURAL LANDING PAGE
+   PROJECT PAGE 3D EXPERIENCE
 ===================================== */
 
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
 
+.projects-hero{
 
-html{
-    scroll-behavior:smooth;
-}
-
-
-body{
-
-    background:#050708;
-    color:white;
-
-    font-family:
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
-
-    overflow-x:hidden;
-
-}
-
-
-
-/* =====================================
-   GLOBAL 3D EFFECT
-===================================== */
-
-
-section{
-
-    perspective:1200px;
-
-}
-
-
-.glass{
-
-    background:
-    rgba(255,255,255,0.06);
-
-    backdrop-filter:
-    blur(18px);
-
-    border:
-
-    1px solid rgba(255,255,255,.18);
-
-    box-shadow:
-
-    0 30px 80px rgba(0,0,0,.45);
-
-}
-
-
-
-
-/* =====================================
-   HEADER
-===================================== */
-
-
-header{
-
-
-position:absolute;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-
-padding:35px 70px;
-
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-
-z-index:20;
-
-
-}
-
-
-
-.logo{
-
-font-size:22px;
-
-letter-spacing:5px;
-
-line-height:1.1;
-
-}
-
-
-
-nav{
-
-display:flex;
-
-gap:45px;
-
-}
-
-
-
-nav a{
-
-
-color:white;
-
-text-decoration:none;
-
-
-font-size:14px;
-
-letter-spacing:2px;
-
-
-opacity:.85;
-
-
-transition:.3s;
-
-
-}
-
-
-
-nav a:hover{
-
-color:#d9a441;
-
-transform:translateY(-3px);
-
-}
-
-
-
-
-
-/* =====================================
-   HERO
-===================================== */
-
-
-.hero{
-
-
-height:100vh;
-
-
-min-height:800px;
-
-
-position:relative;
-
+min-height:70vh;
 
 display:flex;
 
 align-items:center;
 
-
-padding:70px;
-
+padding:160px 70px 80px;
 
 
 background:
-
 
 linear-gradient(
 
@@ -191,467 +23,7 @@ linear-gradient(
 
 rgba(0,0,0,.85),
 
-rgba(0,0,0,.35)
-
-),
-
-
-url("../images/hero.jpg");
-
-
-
-background-size:cover;
-
-background-position:center;
-
-
-}
-
-
-
-.hero::after{
-
-
-content:"";
-
-
-position:absolute;
-
-
-inset:0;
-
-
-background:
-
-radial-gradient(
-
-circle at center,
-
-transparent 10%,
-
-rgba(0,0,0,.65)
-
-);
-
-
-}
-
-
-
-
-
-.hero-content{
-
-
-position:relative;
-
-
-z-index:2;
-
-
-max-width:900px;
-
-
-}
-
-
-
-.subtitle{
-
-
-letter-spacing:5px;
-
-font-size:13px;
-
-color:#d7a447;
-
-}
-
-
-
-.hero h1{
-
-
-margin-top:30px;
-
-
-font-size:
-
-clamp(60px,8vw,120px);
-
-
-font-weight:200;
-
-
-line-height:.9;
-
-
-letter-spacing:-4px;
-
-
-text-shadow:
-
-0 20px 50px black;
-
-
-}
-
-
-
-.description{
-
-
-margin-top:35px;
-
-
-max-width:520px;
-
-
-font-size:20px;
-
-
-line-height:1.6;
-
-
-color:#ddd;
-
-
-}
-
-
-
-
-.button{
-
-
-display:inline-block;
-
-
-margin-top:45px;
-
-
-padding:17px 45px;
-
-
-border:1px solid #d7a447;
-
-
-color:white;
-
-
-text-decoration:none;
-
-
-letter-spacing:3px;
-
-
-background:
-
-rgba(0,0,0,.35);
-
-
-transition:.4s;
-
-
-}
-
-
-
-.button:hover{
-
-
-background:#d7a447;
-
-
-color:black;
-
-
-transform:
-
-translateY(-8px)
-
-scale(1.05);
-
-
-}
-
-
-
-
-
-/* =====================================
-   FLOATING SERVICE CARDS
-===================================== */
-
-
-.services{
-
-
-padding:100px 70px;
-
-
-margin-top:-80px;
-
-
-position:relative;
-
-
-z-index:5;
-
-
-display:grid;
-
-
-grid-template-columns:
-
-repeat(4,1fr);
-
-
-gap:30px;
-
-
-}
-
-
-
-.service-card{
-
-
-padding:40px 30px;
-
-
-height:280px;
-
-
-background:
-
-rgba(20,25,30,.65);
-
-
-border:
-
-1px solid rgba(255,255,255,.2);
-
-
-backdrop-filter:
-
-blur(20px);
-
-
-transform:
-
-translateZ(0);
-
-
-transition:
-
-.5s;
-
-
-}
-
-
-
-
-.service-card:hover{
-
-
-transform:
-
-
-translateY(-30px)
-
-rotateX(8deg)
-
-rotateY(-5deg);
-
-
-border-color:#d7a447;
-
-
-box-shadow:
-
-
-0 40px 80px rgba(0,0,0,.7);
-
-
-}
-
-
-
-
-
-.service-number{
-
-
-color:#d7a447;
-
-
-font-size:20px;
-
-
-}
-
-
-
-.service-card h3{
-
-
-margin-top:40px;
-
-
-font-size:25px;
-
-
-font-weight:300;
-
-
-}
-
-
-
-.service-card p{
-
-
-margin-top:20px;
-
-
-color:#aaa;
-
-
-line-height:1.6;
-
-
-}
-
-
-
-/* =====================================
-   ABOUT SECTION
-===================================== */
-
-
-.about{
-
-
-padding:150px 70px;
-
-
-display:flex;
-
-
-gap:80px;
-
-
-align-items:center;
-
-
-}
-
-
-
-.about-box{
-
-
-flex:1;
-
-
-padding:50px;
-
-
-background:
-
-rgba(255,255,255,.05);
-
-
-border:
-
-1px solid rgba(255,255,255,.15);
-
-
-backdrop-filter:blur(20px);
-
-
-transform:
-
-rotateY(5deg);
-
-
-transition:.5s;
-
-
-}
-
-
-
-.about-box:hover{
-
-
-transform:
-
-rotateY(0)
-
-translateY(-15px);
-
-
-}
-
-
-
-.about h2{
-
-
-font-size:60px;
-
-font-weight:200;
-
-
-}
-
-
-
-.about p{
-
-
-margin-top:30px;
-
-
-font-size:20px;
-
-
-line-height:1.7;
-
-
-color:#ccc;
-
-
-}
-
-
-
-
-
-/* =====================================
-   PROJECT CTA
-===================================== */
-
-
-.project-call{
-
-
-padding:160px 70px;
-
-
-text-align:center;
-
-
-background:
-
-linear-gradient(
-
-rgba(0,0,0,.7),
-
-rgba(0,0,0,.9)
+rgba(0,0,0,.45)
 
 ),
 
@@ -667,190 +39,73 @@ background-position:center;
 
 
 
-.project-call h2{
+.small-title{
 
 
-font-size:70px;
+color:#d7a447;
+
+letter-spacing:5px;
+
+font-size:13px;
+
+
+}
+
+
+
+.projects-hero h1{
+
+
+margin-top:25px;
+
+
+font-size:
+
+clamp(55px,7vw,90px);
 
 
 font-weight:200;
 
 
-}
+line-height:.95;
 
 
-
-.project-call p{
-
-
-margin:30px auto;
-
-
-max-width:600px;
-
-
-font-size:22px;
-
-
-color:#ddd;
+letter-spacing:-3px;
 
 
 }
 
 
 
+.intro-text{
 
 
-/* =====================================
-   FOOTER
-===================================== */
+margin-top:30px;
 
 
-footer{
+max-width:550px;
 
 
-padding:60px 70px;
+font-size:20px;
 
 
-background:#020304;
+color:#ccc;
 
 
-color:#888;
-
-
-letter-spacing:2px;
+line-height:1.6;
 
 
 }
 
 
 
-/* =====================================
-   MOBILE
-===================================== */
 
 
-@media(max-width:1000px){
 
+.projects-container{
 
-.services{
 
-grid-template-columns:1fr 1fr;
-
-}
-
-
-
-.about{
-
-flex-direction:column;
-
-}
-
-
-
-}
-
-
-
-@media(max-width:700px){
-
-
-
-header{
-
-padding:30px;
-
-}
-
-
-
-nav{
-
-display:none;
-
-}
-
-
-
-.hero{
-
-padding:30px;
-
-}
-
-
-
-.hero h1{
-
-font-size:55px;
-
-}
-
-
-
-.services{
-
-grid-template-columns:1fr;
-
-padding:50px 30px;
-
-}
-
-
-
-.about,
-
-.project-call{
-
-padding:80px 30px;
-
-}
-
-
-
-}
-/* =====================================
-   SCROLL ANIMATION
-===================================== */
-
-
-.hidden{
-
-opacity:0;
-
-transform:
-
-translateY(60px);
-
-transition:
-
-1s ease;
-
-}
-
-
-
-.show{
-
-opacity:1;
-
-transform:
-
-translateY(0);
-
-}
-/* =====================================
-   PROJECT PAGE
-===================================== */
-
-
-.project-header{
-
-
-padding:
-
-180px 70px 80px;
+padding:80px 70px 140px;
 
 
 background:#080909;
@@ -860,66 +115,29 @@ background:#080909;
 
 
 
-.project-header p{
 
+.project-grid{
 
-color:#d7a447;
-
-letter-spacing:4px;
-
-font-size:13px;
-
-
-}
-
-
-
-.project-header h1{
-
-font-size:60px;
-
-font-weight:200;
-
-letter-spacing:-2px;
-
-}
-
-
-
-.project-header span{
-
-
-display:block;
-
-
-margin-top:25px;
-
-
-font-size:22px;
-
-
-color:#aaa;
-
-
-}
-
-
-
-
-.project-gallery{
-
-padding:60px 70px 100px;
 
 display:grid;
 
-grid-template-columns:
-repeat(2, minmax(300px, 1fr));
 
-gap:35px;
+grid-template-columns:
+
+repeat(2,1fr);
+
+
+gap:40px;
+
 
 max-width:1400px;
 
+
 margin:auto;
+
+
+perspective:1200px;
+
 
 }
 
@@ -929,7 +147,7 @@ margin:auto;
 .project-card{
 
 
-height:650px;
+height:430px;
 
 
 position:relative;
@@ -938,13 +156,18 @@ position:relative;
 overflow:hidden;
 
 
-border-radius:5px;
+border-radius:12px;
 
 
 transform-style:preserve-3d;
 
 
-transition:.6s;
+animation:
+
+fadeProject 1s ease forwards;
+
+
+transition:.5s;
 
 
 }
@@ -956,10 +179,16 @@ transition:.6s;
 
 transform:
 
+translateY(-20px)
 
-translateY(-25px)
+rotateX(8deg)
 
-rotateX(5deg);
+rotateY(-5deg);
+
+
+box-shadow:
+
+0 50px 100px rgba(0,0,0,.7);
 
 
 }
@@ -967,7 +196,23 @@ rotateX(5deg);
 
 
 
-.project-card img{
+
+.image-wrapper{
+
+
+position:absolute;
+
+inset:0;
+
+
+overflow:hidden;
+
+
+}
+
+
+
+.image-wrapper img{
 
 
 width:100%;
@@ -977,18 +222,21 @@ height:100%;
 object-fit:cover;
 
 
-transition:.8s;
+transition:
+
+1s ease;
 
 
 }
-
 
 
 
 .project-card:hover img{
 
 
-transform:scale(1.1);
+transform:
+
+scale(1.15);
 
 
 }
@@ -997,7 +245,8 @@ transform:scale(1.1);
 
 
 
-.project-overlay{
+
+.project-info{
 
 
 position:absolute;
@@ -1006,20 +255,20 @@ position:absolute;
 inset:0;
 
 
+padding:35px;
+
+
 display:flex;
 
 
 flex-direction:column;
 
 
-justify-content:end;
-
-
-padding:50px;
-
+justify-content:flex-end;
 
 
 background:
+
 
 linear-gradient(
 
@@ -1031,35 +280,9 @@ rgba(0,0,0,.9)
 
 
 
-}
+transform:
 
-
-
-
-
-.project-overlay h2{
-
-font-size:32px;
-
-font-weight:300;
-
-}
-
-
-
-.project-overlay p{
-
-
-margin-top:20px;
-
-
-color:#ccc;
-
-
-font-size:18px;
-
-
-line-height:1.6;
+translateZ(40px);
 
 
 }
@@ -1067,13 +290,62 @@ line-height:1.6;
 
 
 
-.project-overlay a{
+
+.project-info span{
 
 
-margin-top:35px;
+font-size:12px;
+
+
+letter-spacing:4px;
 
 
 color:#d7a447;
+
+
+}
+
+
+
+.project-info h2{
+
+
+margin-top:15px;
+
+
+font-size:34px;
+
+
+font-weight:300;
+
+
+}
+
+
+
+.project-info p{
+
+
+margin-top:15px;
+
+
+color:#ddd;
+
+
+line-height:1.5;
+
+
+}
+
+
+
+.project-info a{
+
+
+margin-top:25px;
+
+
+color:white;
 
 
 text-decoration:none;
@@ -1082,7 +354,70 @@ text-decoration:none;
 letter-spacing:3px;
 
 
+font-size:13px;
+
+
+transition:.3s;
+
+
 }
+
+
+
+.project-info a:hover{
+
+
+color:#d7a447;
+
+
+transform:
+
+translateX(10px);
+
+
+}
+
+
+
+
+
+@keyframes fadeProject{
+
+
+from{
+
+opacity:0;
+
+transform:
+
+translateY(60px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+.project-card:nth-child(2){
+
+animation-delay:.25s;
+
+}
+
 
 
 
@@ -1090,37 +425,35 @@ letter-spacing:3px;
 @media(max-width:900px){
 
 
-.project-gallery{
-
-
-grid-template-columns:1fr;
-
-
-padding:30px;
-
-
-}
-
-
-
-.project-header{
-
+.projects-hero{
 
 padding:130px 30px 60px;
 
+}
+
+
+
+.projects-container{
+
+padding:50px 30px;
 
 }
 
 
 
-.project-header h1{
+.project-grid{
 
-
-font-size:55px;
-
+grid-template-columns:1fr;
 
 }
 
+
+
+.project-info h2{
+
+font-size:28px;
+
+}
 
 
 }
