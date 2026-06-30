@@ -1,6 +1,6 @@
 /* =====================================
    PHRAIMZ CONCEPTS
-   COMPLETE LANDING PAGE STYLE
+   3D ARCHITECTURAL LANDING PAGE
 ===================================== */
 
 
@@ -18,7 +18,7 @@ html{
 
 body{
 
-    background:#0b0b0b;
+    background:#050708;
     color:white;
 
     font-family:
@@ -33,28 +33,67 @@ body{
 
 
 /* =====================================
-   HEADER / NAVIGATION
+   GLOBAL 3D EFFECT
+===================================== */
+
+
+section{
+
+    perspective:1200px;
+
+}
+
+
+.glass{
+
+    background:
+    rgba(255,255,255,0.06);
+
+    backdrop-filter:
+    blur(18px);
+
+    border:
+
+    1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+
+    0 30px 80px rgba(0,0,0,.45);
+
+}
+
+
+
+
+/* =====================================
+   HEADER
 ===================================== */
 
 
 header{
 
-    position:absolute;
 
-    top:0;
-    left:0;
+position:absolute;
 
-    width:100%;
+top:0;
 
-    padding:45px 70px;
+left:0;
 
-    display:flex;
+width:100%;
 
-    justify-content:space-between;
 
-    align-items:center;
+padding:35px 70px;
 
-    z-index:20;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+
+z-index:20;
+
 
 }
 
@@ -62,13 +101,11 @@ header{
 
 .logo{
 
-    font-size:22px;
+font-size:22px;
 
-    line-height:1.1;
+letter-spacing:5px;
 
-    letter-spacing:5px;
-
-    font-weight:400;
+line-height:1.1;
 
 }
 
@@ -76,9 +113,9 @@ header{
 
 nav{
 
-    display:flex;
+display:flex;
 
-    gap:40px;
+gap:45px;
 
 }
 
@@ -86,19 +123,22 @@ nav{
 
 nav a{
 
-    color:white;
 
-    text-decoration:none;
+color:white;
 
-    font-size:14px;
+text-decoration:none;
 
-    letter-spacing:2px;
 
-    text-transform:uppercase;
+font-size:14px;
 
-    opacity:.85;
+letter-spacing:2px;
 
-    transition:.3s;
+
+opacity:.85;
+
+
+transition:.3s;
+
 
 }
 
@@ -106,83 +146,92 @@ nav a{
 
 nav a:hover{
 
-    opacity:1;
+color:#d9a441;
+
+transform:translateY(-3px);
 
 }
 
 
 
+
+
 /* =====================================
-   HERO SECTION
+   HERO
 ===================================== */
 
 
 .hero{
 
 
-    height:100vh;
-
-    min-height:700px;
+height:100vh;
 
 
-    position:relative;
+min-height:800px;
 
 
-    display:flex;
-
-    align-items:center;
+position:relative;
 
 
-    padding:70px;
+display:flex;
+
+align-items:center;
 
 
-
-    background-image:
-
-    linear-gradient(
-        90deg,
-        rgba(0,0,0,.88),
-        rgba(0,0,0,.45)
-    ),
-
-    url("../images/hero.jpg");
+padding:70px;
 
 
 
-    background-size:cover;
+background:
 
-    background-position:center;
 
+linear-gradient(
+
+90deg,
+
+rgba(0,0,0,.85),
+
+rgba(0,0,0,.35)
+
+),
+
+
+url("../images/hero.jpg");
+
+
+
+background-size:cover;
+
+background-position:center;
 
 
 }
 
 
 
-
 .hero::after{
 
 
-    content:"";
+content:"";
 
 
-    position:absolute;
+position:absolute;
 
 
-    inset:0;
+inset:0;
 
 
-    background:
+background:
 
-    radial-gradient(
+radial-gradient(
 
-        circle at 70% 50%,
+circle at center,
 
-        transparent 10%,
+transparent 10%,
 
-        rgba(0,0,0,.55)
+rgba(0,0,0,.65)
 
-    );
+);
 
 
 }
@@ -194,114 +243,80 @@ nav a:hover{
 .hero-content{
 
 
-    position:relative;
+position:relative;
 
 
-    z-index:2;
+z-index:2;
 
 
-    max-width:950px;
-
-
-    animation:appear 1.5s ease;
+max-width:900px;
 
 
 }
-
-
-
-@keyframes appear{
-
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(40px);
-
-    }
-
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-
-}
-
-
 
 
 
 .subtitle{
 
 
-    font-size:13px;
+letter-spacing:5px;
 
-    letter-spacing:5px;
+font-size:13px;
 
-    color:#d0d0d0;
-
-    margin-bottom:35px;
-
+color:#d7a447;
 
 }
-
-
 
 
 
 .hero h1{
 
 
-    font-size:
-
-    clamp(60px,8vw,120px);
+margin-top:30px;
 
 
-    line-height:.92;
+font-size:
+
+clamp(60px,8vw,120px);
 
 
-    font-weight:300;
+font-weight:200;
 
 
-    letter-spacing:-3px;
+line-height:.9;
 
 
-    text-shadow:
+letter-spacing:-4px;
 
-    0 10px 40px rgba(0,0,0,.8);
+
+text-shadow:
+
+0 20px 50px black;
 
 
 }
-
 
 
 
 .description{
 
 
-    margin-top:35px;
+margin-top:35px;
 
 
-    max-width:560px;
+max-width:520px;
 
 
-    font-size:21px;
+font-size:20px;
 
 
-    line-height:1.6;
+line-height:1.6;
 
 
-    color:#e2e2e2;
+color:#ddd;
 
 
 }
-
 
 
 
@@ -309,48 +324,33 @@ nav a:hover{
 .button{
 
 
-    display:inline-block;
+display:inline-block;
 
 
-    margin-top:45px;
+margin-top:45px;
 
 
-    padding:17px 45px;
+padding:17px 45px;
 
 
-    border:
-
-    1px solid rgba(255,255,255,.8);
+border:1px solid #d7a447;
 
 
-
-    color:white;
-
-
-    text-decoration:none;
+color:white;
 
 
-    letter-spacing:3px;
+text-decoration:none;
 
 
-    text-transform:uppercase;
+letter-spacing:3px;
 
 
-    font-size:13px;
+background:
+
+rgba(0,0,0,.35);
 
 
-
-    background:
-
-    rgba(255,255,255,.05);
-
-
-
-    backdrop-filter:blur(8px);
-
-
-
-    transition:.4s;
+transition:.4s;
 
 
 }
@@ -360,170 +360,92 @@ nav a:hover{
 .button:hover{
 
 
-    background:white;
+background:#d7a447;
 
 
-    color:black;
+color:black;
 
 
-    transform:translateY(-5px);
+transform:
+
+translateY(-8px)
+
+scale(1.05);
 
 
 }
+
+
 
 
 
 /* =====================================
-   INTRODUCTION
-===================================== */
-
-
-.intro{
-
-
-    padding:150px 70px;
-
-
-    background:#121212;
-
-
-}
-
-
-
-.intro-text{
-
-
-    max-width:900px;
-
-
-}
-
-
-
-.intro h2{
-
-
-    font-size:
-
-    clamp(40px,5vw,65px);
-
-
-    font-weight:300;
-
-
-    line-height:1.1;
-
-
-}
-
-
-
-.intro p{
-
-
-    margin-top:40px;
-
-
-    max-width:750px;
-
-
-    font-size:22px;
-
-
-    line-height:1.8;
-
-
-    color:#cfcfcf;
-
-
-}
-
-
-
-/* =====================================
-   SERVICES
+   FLOATING SERVICE CARDS
 ===================================== */
 
 
 .services{
 
 
-    padding:130px 70px;
+padding:100px 70px;
 
 
-    background:#0b0b0b;
+margin-top:-80px;
 
 
-}
+position:relative;
 
 
-
-.services h2{
-
-
-    font-size:55px;
-
-    font-weight:300;
+z-index:5;
 
 
-}
+display:grid;
 
 
+grid-template-columns:
+
+repeat(4,1fr);
 
 
-.service-list{
-
-
-    margin-top:70px;
+gap:30px;
 
 
 }
 
 
 
-.service-list div{
+.service-card{
 
 
-    display:flex;
+padding:40px 30px;
 
 
-    align-items:center;
+height:280px;
 
 
-    gap:50px;
+background:
+
+rgba(20,25,30,.65);
 
 
-    padding:35px 0;
+border:
+
+1px solid rgba(255,255,255,.2);
 
 
-    border-bottom:1px solid #292929;
+backdrop-filter:
+
+blur(20px);
 
 
-    transition:.3s;
+transform:
+
+translateZ(0);
 
 
-}
+transition:
 
-
-
-.service-list div:hover{
-
-
-    padding-left:20px;
-
-
-}
-
-
-
-.service-list span{
-
-
-    color:#777;
-
-
-    font-size:18px;
+.5s;
 
 
 }
@@ -531,13 +453,73 @@ nav a:hover{
 
 
 
-.service-list h3{
+.service-card:hover{
 
 
-    font-size:38px;
+transform:
 
 
-    font-weight:300;
+translateY(-30px)
+
+rotateX(8deg)
+
+rotateY(-5deg);
+
+
+border-color:#d7a447;
+
+
+box-shadow:
+
+
+0 40px 80px rgba(0,0,0,.7);
+
+
+}
+
+
+
+
+
+.service-number{
+
+
+color:#d7a447;
+
+
+font-size:20px;
+
+
+}
+
+
+
+.service-card h3{
+
+
+margin-top:40px;
+
+
+font-size:25px;
+
+
+font-weight:300;
+
+
+}
+
+
+
+.service-card p{
+
+
+margin-top:20px;
+
+
+color:#aaa;
+
+
+line-height:1.6;
 
 
 }
@@ -545,37 +527,102 @@ nav a:hover{
 
 
 /* =====================================
-   PROJECT CALL TO ACTION
+   ABOUT SECTION
 ===================================== */
 
 
-.project-call{
+.about{
 
 
-    padding:170px 40px;
+padding:150px 70px;
 
 
-    text-align:center;
+display:flex;
 
 
-    background:
+gap:80px;
 
 
-    linear-gradient(
+align-items:center;
 
-        rgba(0,0,0,.7),
 
-        rgba(0,0,0,.8)
-
-    ),
-
-    url("../images/project-bg.jpg");
+}
 
 
 
-    background-size:cover;
+.about-box{
 
-    background-position:center;
+
+flex:1;
+
+
+padding:50px;
+
+
+background:
+
+rgba(255,255,255,.05);
+
+
+border:
+
+1px solid rgba(255,255,255,.15);
+
+
+backdrop-filter:blur(20px);
+
+
+transform:
+
+rotateY(5deg);
+
+
+transition:.5s;
+
+
+}
+
+
+
+.about-box:hover{
+
+
+transform:
+
+rotateY(0)
+
+translateY(-15px);
+
+
+}
+
+
+
+.about h2{
+
+
+font-size:60px;
+
+font-weight:200;
+
+
+}
+
+
+
+.about p{
+
+
+margin-top:30px;
+
+
+font-size:20px;
+
+
+line-height:1.7;
+
+
+color:#ccc;
 
 
 }
@@ -583,15 +630,50 @@ nav a:hover{
 
 
 
+
+/* =====================================
+   PROJECT CTA
+===================================== */
+
+
+.project-call{
+
+
+padding:160px 70px;
+
+
+text-align:center;
+
+
+background:
+
+linear-gradient(
+
+rgba(0,0,0,.7),
+
+rgba(0,0,0,.9)
+
+),
+
+url("../images/project-bg.jpg");
+
+
+background-size:cover;
+
+background-position:center;
+
+
+}
+
+
+
 .project-call h2{
 
 
-    font-size:
-
-    clamp(40px,5vw,70px);
+font-size:70px;
 
 
-    font-weight:300;
+font-weight:200;
 
 
 }
@@ -601,13 +683,16 @@ nav a:hover{
 .project-call p{
 
 
-    margin-top:30px;
+margin:30px auto;
 
 
-    color:#ddd;
+max-width:600px;
 
 
-    font-size:21px;
+font-size:22px;
+
+
+color:#ddd;
 
 
 }
@@ -624,16 +709,16 @@ nav a:hover{
 footer{
 
 
-    padding:60px 70px;
+padding:60px 70px;
 
 
-    background:#050505;
+background:#020304;
 
 
-    color:#777;
+color:#888;
 
 
-    letter-spacing:2px;
+letter-spacing:2px;
 
 
 }
@@ -645,15 +730,36 @@ footer{
 ===================================== */
 
 
-@media(max-width:800px){
+@media(max-width:1000px){
+
+
+.services{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+
+
+.about{
+
+flex-direction:column;
+
+}
+
+
+
+}
+
+
+
+@media(max-width:700px){
 
 
 
 header{
 
-
-    padding:30px;
-
+padding:30px;
 
 }
 
@@ -661,20 +767,15 @@ header{
 
 nav{
 
-
-    display:none;
-
+display:none;
 
 }
 
 
 
-
 .hero{
 
-
-    padding:35px;
-
+padding:30px;
 
 }
 
@@ -682,61 +783,27 @@ nav{
 
 .hero h1{
 
-
-    font-size:55px;
-
+font-size:55px;
 
 }
 
 
-
-.description{
-
-
-    font-size:18px;
-
-
-}
-
-
-
-.intro,
 
 .services{
 
+grid-template-columns:1fr;
 
-    padding:90px 30px;
-
-
-}
-
-
-
-.service-list h3{
-
-
-    font-size:25px;
-
+padding:50px 30px;
 
 }
 
 
+
+.about,
 
 .project-call{
 
-
-    padding:100px 30px;
-
-
-}
-
-
-
-footer{
-
-
-    padding:40px 30px;
-
+padding:80px 30px;
 
 }
 
